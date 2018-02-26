@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title></title>
+    <link rel="stylesheet" href="index.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <header>
+        <h3>Gallery app using Flickr API</h3>
+      </header>
+    <div class="tags">
+        <input id="tag" placeholder="What is your interest ?">
+        <button id="search" class="">Show</button>
+    </div>
+    <div class="row align-self-center">
+      <div id="results" class="col-sm-8" >
+
+      </div>
+    </div>
+    </div>
+  </body>
+  <script type="text/javascript">
+  $("#search").click(function(){
+  $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
+    {
+      tags: $("#tag").val(),
+      tagmode: "any",
+      format: "json"
+    },
+    function(data) {
+      $.each(data.items, function(i,item){
+        $("<img/>").attr("src", item.media.m).appendTo("#results");
+        if ( i === 8 ) {
+          return false;
+        }
+      });
+    });
+  });
+  </script>
+</html>

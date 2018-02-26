@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <main>
+    <audio id="radio">
+      <source src="http://stream.basso.fi:8000/stream" type="audio/mpeg">
+    </audio>
+    <div class="controller">
+      <h1>Audio Element</h1>
+      <button onclick="playAudio()" type="button">Play</button>
+      <button onclick="pauseAudio()" type="button">Stop</button>
+      <br/>
+      <input id="vol-control" type="range" min="0" max="100" step="1"
+      oninput="SetVolume(this.value)" onchange="SetVolume(this.value)"></input>
+    </div>
+    </main>
+  </body>
+  <script type="text/javascript">
+    var audio = document.getElementById("radio");
+
+    function playAudio(){
+      audio.play();
+    }
+    
+    function pauseAudio(){
+      audio.pause();
+    }
+
+    window.SetVolume = function(val){
+        console.log('Before: ' + audio.volume);
+        audio.volume = val / 100;
+        console.log('After: ' + audio.volume);
+    }
+  </script>
+</html>

@@ -1,0 +1,12 @@
+2.1 
+ RWD became virtal when cross platform interfaces has been on trendy. One design should be effectively adapt on many screen sizes of different devices.
+ Back then, designers might use fluid grid calculationt to make the layout more flexible. However, the result didn't end up well; for example, the image wasn't
+rearranged well with the change in resolution or viewport size. Generally, the old, so-called flexible design created by fluid grid rendered context well enough
+in desktop screen but didn't fully response with other display size.
+ The media query inspect into a horizontal resolution of a device and decide whether the website opened on smaller or wider screen device. It helps the layout 
+and any container scaled down effectively to fit them with any narrower resolution that passed the indicated query in css (eg : mobile phone, tablet etc...).
+ To assign paragraph responsively,em is also a better option which is a relative length for font-size .That means it refers to parents element and can be easily 
+scale when there's a change in display device's resolution. 
+ In conclusion, to make UI as a responsive design, developer can take advantage of jQuery, and bootstrap framework with build-in grid layout for css or flexbox 
+was introduced in css2 as an alternative.
+

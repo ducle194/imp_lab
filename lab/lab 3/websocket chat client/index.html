@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <title>WebSocket Chat</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script src="http://code.jquery.com/jquery-3.0.0.slim.min.js"></script>
+</head>
+<body>
+  <header>
+      <h1>Websocket Chat Client</h1>
+  </header>
+  <div align="center">
+  <form>
+      <div id="name-div">
+          <input id="name" name="name" autocomplete="off" autofocus placeholder="Enter your nickname" />
+          <button>Submit</button>
+      </div>
+      <div id="welcome"></div>
+      <div class="scroll">
+        <ul id="messages"></ul>
+      </div>
+      <div id="input-div">
+          <input id="message" name="message" autocomplete="off" placeholder="Type your message here" />
+          <button>Send</button>
+      </div>
+  </form>
+  </div>
+  <div id="status">
+
+  </div>
+</body>
+<script>
+    websocket = new WebSocket("ws://obscure-waters-98157.herokuapp.com/");
+    $('form').submit(function() {
+        name = $('#name').val() ? $('#name').val() : 'Anonymous';
+        $('#name-div').hide();
+        $('#welcome').text('Hello ' + name);
+        websocket.send(JSON.stringify({
+            name: name,
+            message: $('#message').val()
+        }));
+        $('#message').focus();
+        $('#message').val('');
+        return false;
+    });
+
+    websocket.onopen = function(evt){
+      $('#status').append($('<h3>').text('CONNECTED'));
+    }
+
+    websocket.onmessage = function(evt) {
+        $('#messages').append($('<li>').html(evt.data));
+    };
+
+    websocket.onerror = function(evt) {
+        $('#messages').append($('<li>').text('<span style="color: red;">ERROR:</span> ' + evt.data));
+    };
+</script>
+</html>

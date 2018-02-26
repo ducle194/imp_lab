@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="index.js"></script>
+    <style media="screen">
+      canvas{
+        border:1px solid #000000;
+      }
+    </style>
+  </head>
+  <body onload="draw_on_canvas()">
+    <div style="border: solid 2px green; width: 540px; height: 450px;">
+      <div align="center">
+        <h3>Drawing lines canvas</h3>
+        <p>Press Ctrl key then left mouse to erase a line</p>
+
+        <canvas id="canvas" width="500" height="320"
+           onmouseover = "on_mouse_over( event )"
+           onmouseout  = "on_mouse_out( event )"
+           onmousedown = "on_mouse_down( event )"
+           onmousemove = "on_mouse_move( event )"
+           onmouseup   = "on_mouse_up( event )">
+        </canvas>
+    </div>
+    <div>
+  </body>
+</html>

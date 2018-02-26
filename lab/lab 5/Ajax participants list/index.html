@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JSONP callback</title>
+    <style>
+    ul li{
+      list-style-type: none;
+    }
+    </style>
+  </head>
+  <body>
+    <h3>Person list</h3>
+    <button id="load">Load with Ajax</button>
+    <ul id="show-data">
+    </ul>
+  </body>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('#load').click(function(){
+        $.ajax({
+          url: "https://imp-portfolio-demonstration.herokuapp.com/json/persons.jsonp",
+          dataType: "jsonp"
+        });
+      });
+    });
+
+    function jsonCallback(data){
+      console.log(data);
+      $(data).each(function(i, val){
+        var name;
+        var email;
+        $.each(val,function(key,value){
+          if ( key === 'name'){
+             name = value;
+          }
+          if (key === 'email'){
+            email = value;
+          }
+        })
+        var list=$('#show-data');
+        list.append('<li>'+name+' email: <a href="mailto:'+email+'">'+email+'</a></li>');
+      });
+    }
+  </script>
+</html>
