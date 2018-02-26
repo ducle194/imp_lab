@@ -1,0 +1,8 @@
+jQuery is a cross-platfrom Javascript library designed to nagivate elements more easily,
+ also effectively handling animations and events. It offers developers a powerful library to create dynamic
+ web pages and web application.
+
+CDNs (content delivery networks) is suitable for B2B interactions, when it is able to handle requests from users
+in different locations at a times by catching content from the copies of pages which locations are nearest to the 
+users. However it will get more content from original server if that content has not previously copied. Its ability
+helps global firms provide better, faster communication to all users and also secure their network from spammers.

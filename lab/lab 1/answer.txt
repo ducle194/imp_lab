@@ -1,0 +1,14 @@
+html, shortened from Hypertext Markup Language, is a fundamental markup language providing the structure of a website
+to build webpages and web applications.
+CSS is a stylesheet language which is effectively used to control layout of a webpage or style a website in various ways
+javascript is also a programming language applied to HTML document to control the behavior of web pages.
+HTTP (Hypertext Transfer Protocol) is a client-side protocol to transmit hypermedia documents like HTML which means a client makes a connect to a server 
+to make a request then wait until response is sent back.
+HTML5 is the 5th version of standard markup language and was introduced in 2014. Its implementation offers cross-platfrom element, APIs for web applications
+and mobile application;
+DHTML is a combination of many web technology to enhances users' experience by providing animation, dynamic effects in menus and text. The developers might
+used HTML, JS, CSS and docoment object model (DOM) to make the dynamic changes on the webpage.
+
+coding convention :
+https://www.w3schools.com/
+https://developer.mozilla.org/en-US/

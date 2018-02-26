@@ -1,0 +1,4 @@
+websocket existence enhances the ability of faster communication between client-side and trusted server-side espcially when
+there are multiple participants sending requests continiously. According to the ariticle, it is still a young technology that
+haven not completely implemented in all platforms. In generally, it is suitable for apply on those applications for communication
+in online games, chatroom or even realtime streams etc... 
